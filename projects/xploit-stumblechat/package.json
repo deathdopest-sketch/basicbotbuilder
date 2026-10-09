@@ -1,0 +1,38 @@
+{
+  "name": "xploitbot",
+  "version": "1.0.0",
+  "description": "XploitBot - StumbleChat.com Security & Exploitation Specialist with encoded communications",
+  "main": "stumblechat_version.js",
+  "scripts": {
+    "start": "node stumblechat_version.js",
+    "stumblechat": "node stumblechat_version.js",
+    "web": "node stumblechat_version.js",
+    "exploit": "node stumblechat_version.js",
+    "test": "node test-browser.js",
+    "test-browser": "node test-browser.js",
+    "debug": "node debug-login.js",
+    "debug-login": "node debug-login.js"
+  },
+  "keywords": [
+    "bot",
+    "security",
+    "exploitation",
+    "encoded",
+    "encrypted",
+    "stumblechat",
+    "stealth",
+    "monitoring",
+    "vulnerability",
+    "skull-code"
+  ],
+  "author": "D****l \"Death\" N****n",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "helmet": "^7.1.0",
+    "puppeteer": "^21.11.0",
+    "socket.io": "^4.7.4"
+  }
+}

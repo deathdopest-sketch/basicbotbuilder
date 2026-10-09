@@ -1,0 +1,47 @@
+{
+  "name": "personality-driven-chatbot",
+  "version": "1.0.0",
+  "description": "Advanced chatbot framework with sophisticated personality system - no technical expertise required",
+  "main": "src/index.js",
+  "bin": {
+    "personality-bot": "./bin/personality-bot"
+  },
+  "scripts": {
+    "setup": "node setup.js",
+    "create": "node src/configurator/InteractiveWizard.js",
+    "start": "node src/start.js",
+    "test": "node tests/personality-tests.js",
+    "validate": "node scripts/validate.js",
+    "quick-start": "node scripts/quick-start.js"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^9.4.0",
+    "dotenv": "^16.0.3",
+    "inquirer": "^8.2.4",
+    "puppeteer": "^24.17.0"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0"
+  },
+  "keywords": [
+    "chatbot",
+    "ai",
+    "personality",
+    "automation",
+    "social",
+    "emotional-intelligence",
+    "no-code",
+    "accessible-ai"
+  ],
+  "author": "Community Builders",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/personality-bots/framework.git"
+  },
+  "homepage": "https://github.com/personality-bots/framework#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

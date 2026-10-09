@@ -1,0 +1,11 @@
+{
+  "name": "Skullkey",
+  "description": "StumbleChat Decoder Bot - Decodes XploitBot's encrypted messages and skull codes, making secure conversations look like cute skull emoji groupings",
+  "language": "javascript",
+  "botType": "decoder",
+  "created": "2025-09-01T11:13:43.422Z",
+  "version": "1.0.0",
+  "dependencies": ["puppeteer", "express", "socket.io"],
+  "tutorials_completed": [],
+  "achievements": []
+}

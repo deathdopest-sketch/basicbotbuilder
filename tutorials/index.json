@@ -1,0 +1,60 @@
+{
+  "languages": [
+    {
+      "name": "JavaScript",
+      "key": "javascript",
+      "difficulty": "Beginner",
+      "description": "Perfect for web bots and interactive applications",
+      "lessons": 8,
+      "estimatedHours": 4
+    },
+    {
+      "name": "Python",
+      "key": "python",
+      "difficulty": "Beginner",
+      "description": "Ideal for AI bots and automation scripts",
+      "lessons": 8,
+      "estimatedHours": 4
+    },
+    {
+      "name": "Java",
+      "key": "java",
+      "difficulty": "Intermediate",
+      "description": "Great for enterprise bots and large-scale applications",
+      "lessons": 10,
+      "estimatedHours": 6
+    },
+    {
+      "name": "C++",
+      "key": "cpp",
+      "difficulty": "Advanced",
+      "description": "Best for high-performance bots and system programming",
+      "lessons": 12,
+      "estimatedHours": 8
+    },
+    {
+      "name": "Go",
+      "key": "go",
+      "difficulty": "Intermediate",
+      "description": "Excellent for network services and cloud applications",
+      "lessons": 10,
+      "estimatedHours": 6
+    },
+    {
+      "name": "Rust",
+      "key": "rust",
+      "difficulty": "Advanced",
+      "description": "Perfect for security-critical and performance-critical bots",
+      "lessons": 12,
+      "estimatedHours": 8
+    }
+  ],
+  "advancedTopics": [
+    "Design Patterns",
+    "Testing Strategies",
+    "Performance Optimization",
+    "Security Best Practices",
+    "Deployment and Scaling",
+    "Database Integration"
+  ]
+}

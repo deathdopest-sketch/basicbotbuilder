@@ -1,0 +1,11 @@
+{
+  "name": "3X_XE",
+  "description": "Twitter bot, posts darkhumor jokes and positivity posts to confuse people",
+  "language": "java",
+  "botType": "social",
+  "created": "2025-08-31T18:29:32.579Z",
+  "version": "1.0.0",
+  "dependencies": [],
+  "tutorials_completed": [],
+  "achievements": []
+}

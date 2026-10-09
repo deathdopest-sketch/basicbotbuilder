@@ -1,0 +1,11 @@
+{
+  "name": "ChickenStock",
+  "description": "StockTrader",
+  "language": "cpp",
+  "botType": "trading",
+  "created": "2025-08-31T16:40:31.158Z",
+  "version": "1.0.0",
+  "dependencies": [],
+  "tutorials_completed": [],
+  "achievements": []
+}

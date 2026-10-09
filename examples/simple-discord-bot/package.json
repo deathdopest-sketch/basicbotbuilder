@@ -1,0 +1,32 @@
+{
+  "name": "simple-discord-bot",
+  "version": "1.0.0",
+  "description": "A simple Discord bot example created with Comprehensive Bot Builder",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "javascript",
+    "example",
+    "beginner"
+  ],
+  "author": "Comprehensive Bot Builder",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
+
+
+

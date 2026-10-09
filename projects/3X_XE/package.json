@@ -1,0 +1,31 @@
+{
+  "name": "3x_xe-twitter-bot",
+  "version": "1.0.0",
+  "description": "3X_XE - Dark Humor & Positivity Twitter Bot",
+  "main": "bot.js",
+  "author": "D****l \"Death\" N****n",
+  "license": "MIT",
+  "keywords": [
+    "twitter",
+    "bot",
+    "dark-humor",
+    "positivity",
+    "social-media",
+    "automation"
+  ],
+  "dependencies": {
+    "twitter-api-v2": "^1.15.0",
+    "node-cron": "^3.0.3",
+    "dotenv": "^16.3.1",
+    "chalk": "^5.3.0"
+  },
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "node bot.js --dev",
+    "test": "node bot.js --test",
+    "post": "node bot.js --post"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

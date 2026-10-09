@@ -1,0 +1,52 @@
+{
+  "username": "Coder",
+  "level": 1,
+  "xp": 155,
+  "achievements": [
+    {
+      "title": "Completed Python tutorial!",
+      "icon": "🎓",
+      "dateEarned": "2025-08-31T16:25:21.628Z"
+    }
+  ],
+  "completedChallenges": [],
+  "streakDays": 1,
+  "totalProjects": 21,
+  "languagesLearned": [
+    "java",
+    "python",
+    "javascript",
+    "cpp",
+    "rust"
+  ],
+  "botsCreated": [
+    "social",
+    "security",
+    "ai",
+    "image",
+    "chat",
+    "iot",
+    "automation",
+    "trading",
+    "game"
+  ],
+  "tutorialsCompleted": [],
+  "lastActive": "2025-09-09T15:37:00.269Z",
+  "stats": {
+    "totalCodingTime": 0,
+    "projectsCreated": 21,
+    "tutorialsCompleted": 0,
+    "challengesSolved": 0,
+    "testsPassed": 6
+  },
+  "completedTutorials": [
+    "python"
+  ],
+  "currentLanguage": "python",
+  "totalTimeSpent": 0,
+  "preferences": {
+    "educationalMode": true,
+    "autoSave": true,
+    "showHints": true
+  }
+}

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💀 XploitBot - StumbleChat Security & Exploitation</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+            color: #00ff00;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff4444;
+            text-shadow: 0 0 10px #ff4444;
+            font-size: 2.5em;
+        }
+
+        .status-panel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .panel {
+            background: rgba(0, 20, 0, 0.5);
+            border: 1px solid #00aa00;
+            border-radius: 5px;
+            padding: 15px;
+        }
+
+        .panel h3 {
+            color: #ffff00;
+            margin-top: 0;
+            border-bottom: 1px solid #ffff00;
+            padding-bottom: 5px;
+        }
+
+        .control-panel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        button {
+            background: linear-gradient(45deg, #333, #555);
+            color: #00ff00;
+            border: 1px solid #00ff00;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #555, #777);
+            box-shadow: 0 0 10px #00ff00;
+        }
+
+        .danger {
+            background: linear-gradient(45deg, #330000, #550000);
+            border-color: #ff4444;
+            color: #ff4444;
+        }
+
+        .danger:hover {
+            background: linear-gradient(45deg, #550000, #770000);
+            box-shadow: 0 0 10px #ff4444;
+        }
+
+        .log-area {
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid #444;
+            border-radius: 5px;
+            padding: 15px;
+            height: 300px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+        }
+
+        .encoded-msg {
+            background: rgba(255, 0, 0, 0.1);
+            border-left: 3px solid #ff4444;
+            padding: 5px;
+            margin: 5px 0;
+        }
+
+        .skull-msg {
+            background: rgba(255, 255, 0, 0.1);
+            border-left: 3px solid #ffff00;
+            padding: 5px;
+            margin: 5px 0;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .online {
+            background: #00ff00;
+            box-shadow: 0 0 5px #00ff00;
+        }
+
+        .offline {
+            background: #666;
+        }
+
+        .task-mode {
+            background: #ffaa00;
+            box-shadow: 0 0 5px #ffaa00;
+        }
+
+        input, select {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #00ff00;
+            color: #00ff00;
+            padding: 8px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .command-examples {
+            background: rgba(0, 100, 0, 0.2);
+            border: 1px solid #00aa00;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .command-examples h4 {
+            color: #00ff00;
+            margin-top: 0;
+        }
+
+        .command-examples code {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 2px 5px;
+            border-radius: 3px;
+            color: #ffff00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💀 XploitBot - Security & Exploitation Specialist</h1>
+
+        <div class="status-panel">
+            <div class="panel">
+                <h3>🔒 Bot Status</h3>
+                <p>Status: <span class="status-indicator offline" id="botStatus"></span><span id="statusText">Offline</span></p>
+                <p>Mode: <span id="taskMode">Normal</span></p>
+                <p>Encryption: <span id="encryptionMode">Base64</span></p>
+            </div>
+
+            <div class="panel">
+                <h3>📊 Security Metrics</h3>
+                <p>Users Scanned: <span id="usersScanned">0</span></p>
+                <p>Messages Analyzed: <span id="messagesAnalyzed">0</span></p>
+                <p>Vulnerabilities Found: <span id="vulnerabilitiesFound">0</span></p>
+            </div>
+
+            <div class="panel">
+                <h3>🎭 Communication Mode</h3>
+                <p>Current: <span id="commMode">Encoded Messages</span></p>
+                <p>Last Skull Code: <span id="lastSkullCode">None</span></p>
+            </div>
+        </div>
+
+        <div class="command-examples">
+            <h4>📝 Available Commands (send in chat)</h4>
+            <p><code>@xploit scan</code> - Start security scan</p>
+            <p><code>@xploit exploit find</code> - Search for vulnerabilities</p>
+            <p><code>@xploit task start</code> - Enter skull code mode</p>
+            <p><code>@xploit task end</code> - Exit skull code mode</p>
+            <p><code>@xploit report</code> - Get security status report</p>
+            <p><code>@xploit encode [message]</code> - Send encoded message</p>
+        </div>
+
+        <div class="control-panel">
+            <button onclick="startScan()">🔍 Start Security Scan</button>
+            <button onclick="findVulnerabilities()">🎯 Find Exploits</button>
+            <button onclick="toggleTaskMode()">⚡ Toggle Task Mode</button>
+            <button onclick="getReport()">📊 Get Report</button>
+            <button onclick="changeEncryption()">🔐 Change Encryption</button>
+            <button class="danger" onclick="emergencyShutdown()">🚨 Emergency Shutdown</button>
+        </div>
+
+        <div class="panel">
+            <h3>📋 Activity Log</h3>
+            <div class="log-area" id="activityLog">
+💀 XploitBot initialized and ready for security operations...
+🔒 Monitoring for commands and security threats...
+            </div>
+        </div>
+
+        <div class="panel">
+            <h3>💀 Skull Code Interpreter</h3>
+            <p>Enter skull code to decode:</p>
+            <input type="text" id="skullInput" placeholder="💀☠️👻🦇..." style="width: 300px;">
+            <button onclick="decodeSkullCode()">🔓 Decode</button>
+            <p id="decodedMessage"></p>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        let isTaskMode = false;
+
+        // Update status indicators
+        socket.on('bot-status', (data) => {
+            document.getElementById('botStatus').className = data.online ? 'status-indicator online' : 'status-indicator offline';
+            document.getElementById('statusText').textContent = data.online ? 'Online' : 'Offline';
+        });
+
+        socket.on('task-mode-changed', (data) => {
+            isTaskMode = data.taskMode;
+            document.getElementById('taskMode').textContent = data.taskMode ? 'Task Mode' : 'Normal';
+            document.getElementById('commMode').textContent = data.taskMode ? 'Skull Code' : 'Encoded Messages';
+        });
+
+        socket.on('message-sent', (data) => {
+            addToLog(data.message, data.type);
+        });
+
+        socket.on('scan-results', (data) => {
+            document.getElementById('usersScanned').textContent = data.users;
+            document.getElementById('messagesAnalyzed').textContent = data.messages;
+            addToLog(`Security scan complete: ${data.users} users, ${data.messages} messages`, 'encoded');
+        });
+
+        function addToLog(message, type = 'normal') {
+            const logArea = document.getElementById('activityLog');
+            const logEntry = document.createElement('div');
+            logEntry.className = type === 'skull' ? 'skull-msg' : type === 'encoded' ? 'encoded-msg' : '';
+            logEntry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            logArea.appendChild(logEntry);
+            logArea.scrollTop = logArea.scrollHeight;
+        }
+
+        async function startScan() {
+            const response = await fetch('/start-scan', { method: 'POST' });
+            const result = await response.json();
+            addToLog(result.message || 'Security scan initiated', 'encoded');
+        }
+
+        async function findVulnerabilities() {
+            const response = await fetch('/find-vulnerabilities', { method: 'POST' });
+            const result = await response.json();
+            addToLog(result.message || 'Vulnerability scan initiated', 'encoded');
+        }
+
+        async function toggleTaskMode() {
+            const response = await fetch('/toggle-task-mode', { method: 'POST' });
+            const result = await response.json();
+            addToLog(result.message || 'Task mode toggled', 'skull');
+        }
+
+        async function getReport() {
+            const response = await fetch('/get-report', { method: 'POST' });
+            const result = await response.json();
+            addToLog(result.message || 'Security report generated', 'encoded');
+        }
+
+        async function changeEncryption() {
+            const newMode = prompt('Enter encryption mode (base64, rot13, caesar):', 'base64');
+            if (newMode) {
+                const response = await fetch('/change-encryption', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ mode: newMode })
+                });
+                const result = await response.json();
+                document.getElementById('encryptionMode').textContent = newMode.toUpperCase();
+                addToLog(`Encryption changed to ${newMode}`, 'encoded');
+            }
+        }
+
+        async function emergencyShutdown() {
+            if (confirm('Are you sure you want to shutdown XploitBot?')) {
+                const response = await fetch('/shutdown', { method: 'POST' });
+                addToLog('Emergency shutdown initiated', 'skull');
+            }
+        }
+
+        function decodeSkullCode() {
+            const skullCode = document.getElementById('skullInput').value;
+            // This would normally send to decoder bot, but for demo we'll show placeholder
+            document.getElementById('decodedMessage').textContent = `Decoded: ${skullCode} → [This would be sent to decoder bot]`;
+            document.getElementById('lastSkullCode').textContent = skullCode;
+        }
+
+        // Initialize
+        addToLog('💀 XploitBot web interface loaded', 'skull');
+    </script>
+</body>
+</html>
